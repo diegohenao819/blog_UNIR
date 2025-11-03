@@ -1,3 +1,4 @@
+/* === RESET RÁPIDO === */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* === topbar === */
+/* === TOPBAR === */
 .topbar {
   width: 100%;
   padding: 1.2rem 4rem;
@@ -74,7 +75,7 @@ body {
   color: #0f172a;
 }
 
-/* === hero === */
+/* === HERO === */
 .hero-section {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -148,7 +149,7 @@ body {
   background: rgba(247, 180, 65, 0.12);
 }
 
-/* imagen héroe */
+/* HERO IMAGEN */
 .hero-image {
   display: flex;
   justify-content: center;
@@ -171,7 +172,7 @@ body {
   object-fit: cover;
 }
 
-/* === sección blog === */
+/* === SECCIÓN BLOG (HOME) === */
 .blog-section {
   padding: 3rem 4rem;
 }
@@ -225,7 +226,7 @@ body {
   font-weight: 500;
 }
 
-/* contacto */
+/* === CONTACTO === */
 .contact-section {
   padding: 3rem 4rem 4rem;
 }
@@ -238,7 +239,16 @@ body {
   max-width: 420px;
 }
 
-/* footer */
+.contact-box a {
+  color: #f7b441;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* === FOOTER === */
 .footer {
   padding: 1.8rem 4rem 3rem;
   text-align: center;
@@ -246,13 +256,15 @@ body {
   font-size: 0.8rem;
 }
 
-
-
-
+/* =========================================================
+   PÁGINAS INTERNAS (post-mi-historia, post-experiencia, proyectos)
+   ========================================================= */
 .blog-post {
   padding: 3.5rem 4rem 4rem;
   max-width: 900px;
+  /* mismo ancho para TODAS las internas */
   margin: 0 auto;
+  width: 100%;
 }
 
 .post-content img.post-img {
@@ -263,18 +275,15 @@ body {
   border: 2px solid rgba(247, 180, 65, 0.25);
 }
 
-.project-list {
-  margin: 1rem 0 2rem 1.3rem;
-  display: grid;
-  gap: 0.5rem;
-}
-
-/* === projects grid === */
+/* =========================================================
+   PROYECTOS
+   ========================================================= */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+  width: 100%;
 }
 
 .project-card {
@@ -284,13 +293,15 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 280px;
+  min-width: 0;
+  /* importantísimo para que las imágenes externas no rompan */
 }
 
 .project-img {
   width: 100%;
   height: 150px;
   object-fit: cover;
+  display: block;
   background: #0f172a;
 }
 
@@ -318,81 +329,9 @@ body {
   text-decoration: underline;
 }
 
-@media (max-width: 620px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-.contact-box a {
-  color: #f7b441;
-  text-decoration: none;
-}
-
-.contact-box a:hover {
-  text-decoration: underline;
-}
-
-
-
-.blog-post {
-  padding: 3.5rem 4rem 4rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-  width: 100%;
-}
-
-.project-card {
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid rgba(247, 180, 65, 0.15);
-  border-radius: 1rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.project-img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-}
-
-.project-title {
-  font-size: 1.05rem;
-  margin: 1rem 1rem 0.4rem;
-}
-
-.project-text {
-  margin: 0 1rem 1rem;
-  color: rgba(226, 232, 240, 0.7);
-  font-size: 0.87rem;
-  flex: 1;
-}
-
-.project-link {
-  display: inline-block;
-  margin: 0 1rem 1.1rem;
-  text-decoration: none;
-  color: #f7b441;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-
-
-
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 /* tablets y pantallas medianas */
 @media (max-width: 992px) {
@@ -462,17 +401,17 @@ body {
     height: 210px;
   }
 
-  /* cards del blog */
+  /* blog home */
   .posts-grid {
     grid-template-columns: 1fr;
   }
 
-  /* página de post */
+  /* páginas internas */
   .blog-post {
     padding: 2.5rem 1.25rem 3rem;
   }
 
-  /* proyectos */
+  /* proyectos: aquí sí forzamos 1 por fila */
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -512,33 +451,9 @@ body {
   .footer {
     padding-inline: 1rem;
   }
-}
-
-
-
-
-/* responsive para proyectos */
-@media (max-width: 992px) {
-  .blog-post {
-    padding: 3rem 1.5rem 3.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr 1fr;
-    /* 2 por fila en tablets */
-  }
-}
-
-@media (max-width: 540px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    /* 1 por fila en cel */
-  }
 
   .project-link {
     white-space: normal;
-    /* ya puede romper en cel */
+    /* para que "Ver proyecto →" no se salga */
   }
 }
