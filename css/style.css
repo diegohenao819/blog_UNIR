@@ -1,0 +1,373 @@
+/* === reset rápido === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f172a;              /* azul oscuro tipo screenshot */
+  color: #e2e8f0;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+/* === topbar === */
+.topbar {
+  width: 100%;
+  padding: 1.2rem 4rem;
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom: 1px solid rgba(247, 180, 65, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-circle {
+  width: 45px;
+  height: 45px;
+  background: #0f172a;
+  border: 2px solid #f7b441;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.logo-text {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+}
+
+.logo-text span {
+  color: #f7b441;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-btn {
+  border: 2px solid #f7b441;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: #e2e8f0;
+  transition: 0.2s ease;
+  font-weight: 500;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background: #f7b441;
+  color: #0f172a;
+}
+
+/* === hero === */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  padding: 4rem 4rem 3rem;
+  min-height: 78vh;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-small {
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: rgba(226, 232, 240, 0.6);
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 5vw, 3.6rem);
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.hero-title span {
+  color: #f7b441;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  letter-spacing: 4px;
+  text-transform: none;
+  color: #f97316;    /* naranja rojizo como el tuyo */
+  margin-bottom: 1.4rem;
+}
+
+.hero-text {
+  color: rgba(226, 232, 240, 0.8);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  border: 2px solid #f7b441;
+}
+
+.btn-primary {
+  background: #f7b441;
+  color: #0f172a;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.btn-secondary:hover {
+  background: rgba(247, 180, 65, 0.12);
+}
+
+/* imagen héroe */
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-ring {
+  width: 280px;
+  height: 280px;
+  border: 12px solid #f7b441;
+  border-radius: 9999px;
+  background: #f9a826;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.avatar-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === sección blog === */
+.blog-section {
+  padding: 3rem 4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-text {
+  color: rgba(226, 232, 240, 0.7);
+  margin-bottom: 2rem;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.post-card {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(247, 180, 65, 0.15);
+  border-radius: 1rem;
+  padding: 1.4rem 1.4rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.post-date {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.6);
+}
+
+.post-title a {
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+.post-excerpt {
+  color: rgba(226, 232, 240, 0.7);
+  font-size: 0.9rem;
+}
+
+.post-link {
+  text-decoration: none;
+  color: #f7b441;
+  font-weight: 500;
+}
+
+/* contacto */
+.contact-section {
+  padding: 3rem 4rem 4rem;
+}
+
+.contact-box {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(247, 180, 65, 0.15);
+  border-radius: 1rem;
+  padding: 1.4rem 1.6rem;
+  max-width: 420px;
+}
+
+/* footer */
+.footer {
+  padding: 1.8rem 4rem 3rem;
+  text-align: center;
+  color: rgba(226, 232, 240, 0.6);
+  font-size: 0.8rem;
+}
+
+/* === responsive === */
+@media (max-width: 990px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .hero-image {
+    justify-content: flex-start;
+  }
+  .topbar {
+    padding-inline: 1.2rem;
+  }
+  .hero-section,
+  .blog-section,
+  .contact-section {
+    padding-inline: 1.2rem;
+  }
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav {
+    gap: 0.7rem;
+  }
+  .nav-btn {
+    padding: 0.45rem 1rem;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .avatar-ring {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+
+.blog-post {
+  padding: 3.5rem 4rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.post-content img.post-img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  border: 2px solid rgba(247, 180, 65, 0.25);
+}
+
+.project-list {
+  margin: 1rem 0 2rem 1.3rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* === projects grid === */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(247, 180, 65, 0.15);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+
+.project-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #0f172a;
+}
+
+.project-title {
+  font-size: 1.05rem;
+  margin: 1rem 1rem 0.4rem;
+}
+
+.project-text {
+  margin: 0 1rem 1rem;
+  color: rgba(226, 232, 240, 0.7);
+  font-size: 0.87rem;
+  flex: 1;
+}
+
+.project-link {
+  display: inline-block;
+  margin: 0 1rem 1.1rem;
+  text-decoration: none;
+  color: #f7b441;
+  font-weight: 500;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 620px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.contact-box a {
+  color: #f7b441;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
